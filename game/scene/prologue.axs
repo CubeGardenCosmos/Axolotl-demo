@@ -7,7 +7,7 @@
 ;   · playEffect   BGS 循环音效（-id= 通道）与停止（none -id=）
 ;   · wait         时间停顿
 ;   · setTextbox   文本框显隐
-;   · filmMode     电影遮幅模式
+;   · filmMode     电影遮幅模式（-position= 对白六档位置，进出 Crossfade）
 ;   · 对白语音挂载（-Vbeep_*）与音量（-volume=）
 ;   · if + jumpLabel 巡礼模式分流（线性 / 自由参观）
 ; =============================================================================
@@ -36,9 +36,14 @@ wait:400;
 playEffect:none -id=rain;
 :（BGS 循环已停止。）;
 
-filmMode:on;
-:接下来是电影遮幅模式——上下黑边，适合关键剧情。;
-雪乃:filmMode 随时开、随时关，为演出让出焦点。 -Vbeep_heroine.wav;
+filmMode:on -position=bottom;
+:电影遮幅开启——对白默认落在下方黑辐居中。;
+雪乃:位置可定义：上方居中、四角对齐都行，进出遮幅带 Crossfade。 -Vbeep_heroine.wav;
+filmMode:on -position=topright;
+:右上角，向右对齐。;
+filmMode:on -position=topleft;
+:左上角，向左对齐。;
+雪乃:退出遮幅时，上下黑边会平滑淡出。 -Vbeep_heroine.wav -volume=80;
 filmMode:none;
 
 setTextbox:hide;
