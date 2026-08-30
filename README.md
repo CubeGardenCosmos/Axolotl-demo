@@ -26,6 +26,7 @@
 | 入口大厅 | `game/scene/start.axs` | intro 定格、BGM、背景、miniAvatar、分支菜单、`end` |
 | 序章 · 开场 | `game/scene/prologue.axs` | 背景轮换、三槽立绘、BGS/SE、wait、filmMode、setTextbox |
 | 舞台演出席 | `game/scene/chapter_stage.axs` | 图鉴解锁、intro、playVideo/getUserInput 降级、showVars |
+| 音乐混音台 | `game/scene/chapter_audio.axs` | `.axaudiomix` 分轨编曲：全轨齐响 / `-track=1,2|2,3|1,3` 选轨 / `-track 1|2|3` 独奏 / `bgm:none` 收束 / 单声道素材普通播放 |
 | 逻辑与控制流 | `game/scene/chapter_logic.axs` | 变量、if、-when、带门槛 choose、callScene/return |
 | 子场景 | `game/scene/subscene_quiz.axs` | callScene 参数注入与 `return:prize*2` 返回值 |
 
@@ -52,9 +53,13 @@ cargo run -p axolotl-app --features windowed -- --game-dir /path/to/Axolotl-demo
 ### 最近一次无头验收快照
 
 ```
-headless run complete — steps=56 lines=52 choices=2 entry="start.axs" script ended
-axolotlc check <game/scene>  →  checked 5 scene files: 0 errors, 0 warnings
+headless run complete — steps=80 lines=76 choices=2 entry="start.axs" script ended
+axolotlc check <game/scene>  →  checked 6 scene files: 0 errors, 0 warnings
+axolotlc doctor <game>       →  18 notes, 1 warning(缺入口 exe，引擎仓库构建才有), 0 errors
 ```
+> 混音台素材：`game/bgm/fairy_dance_{pno,harp,violin}.wav` 为 Fairy Dance 三声部
+> stem（146318ms，IEEE Float 双声道 44.1kHz，时长一致满足 ±50ms 契约）；
+> `fairy_dance_mono.wav` 为派生单声道测试剪辑（45s）。
 
 ## 目录结构
 

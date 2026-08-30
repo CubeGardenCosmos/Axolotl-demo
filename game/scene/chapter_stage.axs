@@ -38,9 +38,9 @@ showVars;
 :再来一个不带 hold 的 intro，展示自动收起的舞台化字幕。;
 intro:演出到此告一段落。;
 
-if:tour==1|jumpLabel:to_logic;
+if:tour==1|jumpLabel:to_audio;
 雪乃:舞台演出席完成，我们回大厅继续。 -Vbeep_heroine.wav;
 changeScene:start.axs;
-label:to_logic;
-雪乃:下一站：「逻辑与控制流」。 -Vbeep_heroine.wav;
-changeScene:chapter_logic.axs;
+label:to_audio;
+雪乃:下一站：音频演播室「分轨混音台」。 -Vbeep_heroine.wav;
+changeScene:chapter_audio.axs;

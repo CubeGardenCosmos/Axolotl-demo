@@ -1,0 +1,14 @@
+; ===== bgm/fairy_dance_mix.axaudiomix =====
+; Fairy Dance 分轨编曲（三声部）：钢琴 + 竖琴 + 小提琴
+;
+; · 轨道序号从 1 起，允许非连续；
+; · 同一混音台所有轨道时长强制一致（容差 ±50ms）——三支 stem 均为
+;   146318ms（IEEE Float 32bit / 双声道 / 44.1kHz），满足契约；
+; · 仅收双声道 wav 源（打包期转 ogg 属 Phase 6 ffmpeg 职责）；
+; · 文件本身走 VFS 逻辑路径——脚本只写逻辑路径。
+;
+; 轨道号对应：1=钢琴(pno) 2=竖琴(harp) 3=小提琴(violin)
+
+track 1 bgm/fairy_dance_pno.wav
+track 2 bgm/fairy_dance_harp.wav
+track 3 bgm/fairy_dance_violin.wav
