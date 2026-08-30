@@ -1,0 +1,16 @@
+# Engine/compiler artifacts (never commit: per project policy, this repo
+# ships only scripts + demo assets, no Axolotl binaries)
+scenes.axb
+assets.pak
+vocal_*.pak
+*.axb
+
+# Runtime persistence written beside the game data
+game/save/
+save/
+
+# OS / editor noise
+.DS_Store
+__pycache__/
+*.pyc
+*.log

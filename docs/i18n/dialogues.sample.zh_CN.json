@@ -1,0 +1,375 @@
+{
+  "locale": "zh_CN",
+  "entries": [
+    {
+      "key": "choice.416b1827f8f9",
+      "source": "打开宝箱",
+      "translation": "打开宝箱"
+    },
+    {
+      "key": "choice.5b400e0cbe8c",
+      "source": "结束演示",
+      "translation": "结束演示"
+    },
+    {
+      "key": "choice.802637b96d15",
+      "source": "一键巡礼（顺序播放全部章节）",
+      "translation": "一键巡礼（顺序播放全部章节）"
+    },
+    {
+      "key": "choice.9fffcd5f6dab",
+      "source": "继续前进",
+      "translation": "继续前进"
+    },
+    {
+      "key": "choice.b4f03316e878",
+      "source": "自由参观（每章后回大厅）",
+      "translation": "自由参观（每章后回大厅）"
+    },
+    {
+      "key": "dialog.0576151a265b",
+      "source": "那么，本次特性巡礼到此结束。感谢体验。",
+      "translation": "那么，本次特性巡礼到此结束。感谢体验。"
+    },
+    {
+      "key": "dialog.06b8ffbc31b8",
+      "source": "序章巡礼到此为止，我们回大厅继续。",
+      "translation": "序章巡礼到此为止，我们回大厅继续。"
+    },
+    {
+      "key": "dialog.08e95dd2daf7",
+      "source": "showVars 会在屏幕一角叠加变量表，供剧本作者现场排错。",
+      "translation": "showVars 会在屏幕一角叠加变量表，供剧本作者现场排错。"
+    },
+    {
+      "key": "dialog.0913ba5deb23",
+      "source": "if 条件成立，跳到了 good 标签。",
+      "translation": "if 条件成立，跳到了 good 标签。"
+    },
+    {
+      "key": "dialog.0b3c26279c4e",
+      "source": "我就是从右边登场的物理老师。",
+      "translation": "我就是从右边登场的物理老师。"
+    },
+    {
+      "key": "dialog.0e0640ec0591",
+      "source": "逻辑章完成，我们回大厅继续。",
+      "translation": "逻辑章完成，我们回大厅继续。"
+    },
+    {
+      "key": "dialog.13a1fa496f61",
+      "source": "全局变量 quest 已更新——跨场景依然保留。",
+      "translation": "全局变量 quest 已更新——跨场景依然保留。"
+    },
+    {
+      "key": "dialog.17b3cf532a7d",
+      "source": "每一场戏，都对应引擎的一项能力。",
+      "translation": "每一场戏，都对应引擎的一项能力。"
+    },
+    {
+      "key": "dialog.18f29cb27c77",
+      "source": "这一章是舞台演出席，重点看图鉴与演出指令。",
+      "translation": "这一章是舞台演出席，重点看图鉴与演出指令。"
+    },
+    {
+      "key": "dialog.3377cb882116",
+      "source": "（好感度不足，这一句不会显示——它被 if 跳过了。）",
+      "translation": "（好感度不足，这一句不会显示——它被 if 跳过了。）"
+    },
+    {
+      "key": "dialog.352cfe11d954",
+      "source": "（子场景开始：参数 difficulty、prize 已作为局部变量注入，BGM 与舞台状态保持调用方现场。）",
+      "translation": "（子场景开始：参数 difficulty、prize 已作为局部变量注入，BGM 与舞台状态保持调用方现场。）"
+    },
+    {
+      "key": "dialog.3868e9dba659",
+      "source": "重复出现的语音文件会被 VFS 缓存复用，不会重复读取磁盘。",
+      "translation": "重复出现的语音文件会被 VFS 缓存复用，不会重复读取磁盘。"
+    },
+    {
+      "key": "dialog.456bc2a4fb50",
+      "source": "每条对白都能挂载语音；你现在听到的嘟嘟声就是占位语音。",
+      "translation": "每条对白都能挂载语音；你现在听到的嘟嘟声就是占位语音。"
+    },
+    {
+      "key": "dialog.5108efbfc7db",
+      "source": "栈式虚拟机逐条执行：背景、立绘、音频、分支、存档……全部数据驱动。",
+      "translation": "栈式虚拟机逐条执行：背景、立绘、音频、分支、存档……全部数据驱动。"
+    },
+    {
+      "key": "dialog.5121cdb39145",
+      "source": "右下角的小头像叫 miniAvatar，随时挂载、随时移除。",
+      "translation": "右下角的小头像叫 miniAvatar，随时挂载、随时移除。"
+    },
+    {
+      "key": "dialog.5661e264a41b",
+      "source": "你好，我是本场演示的向导「雪乃」。",
+      "translation": "你好，我是本场演示的向导「雪乃」。"
+    },
+    {
+      "key": "dialog.57002d5254b9",
+      "source": "现在是一个带条件门槛的选择支。",
+      "translation": "现在是一个带条件门槛的选择支。"
+    },
+    {
+      "key": "dialog.59f27624ba92",
+      "source": "欢迎来到 Axolotl 引擎的特性演示。",
+      "translation": "欢迎来到 Axolotl 引擎的特性演示。"
+    },
+    {
+      "key": "dialog.5bdd5d2033c8",
+      "source": "两张 CG 已登记解锁，稍后可到「鉴赏（图鉴占位）」查看。",
+      "translation": "两张 CG 已登记解锁，稍后可到「鉴赏（图鉴占位）」查看。"
+    },
+    {
+      "key": "dialog.5c0b639151ac",
+      "source": "自由参观模式——每章结束后会回到本大厅菜单。",
+      "translation": "自由参观模式——每章结束后会回到本大厅菜单。"
+    },
+    {
+      "key": "dialog.6177ae8c1c5e",
+      "source": "舞台演出席完成，我们回大厅继续。",
+      "translation": "舞台演出席完成，我们回大厅继续。"
+    },
+    {
+      "key": "dialog.630e0b6eed03",
+      "source": "下一站：「逻辑与控制流」。",
+      "translation": "下一站：「逻辑与控制流」。"
+    },
+    {
+      "key": "dialog.6daa472df45e",
+      "source": "在「设置」里切换语言时，语音包会热切换为不同音型的嘟嘟声。",
+      "translation": "在「设置」里切换语言时，语音包会热切换为不同音型的嘟嘟声。"
+    },
+    {
+      "key": "dialog.71311aa50396",
+      "source": "好的，以线性巡礼模式开始——看完一个章节会自动进入下一章。",
+      "translation": "好的，以线性巡礼模式开始——看完一个章节会自动进入下一章。"
+    },
+    {
+      "key": "dialog.725c3938a829",
+      "source": "难度不足 2，只回馈基础奖金。",
+      "translation": "难度不足 2，只回馈基础奖金。"
+    },
+    {
+      "key": "dialog.72801bf674f2",
+      "source": "（end 指令结束剧本，返回标题画面。）",
+      "translation": "（end 指令结束剧本，返回标题画面。）"
+    },
+    {
+      "key": "dialog.73456bf999de",
+      "source": "BGM 图鉴也记录了解锁曲目。",
+      "translation": "BGM 图鉴也记录了解锁曲目。"
+    },
+    {
+      "key": "dialog.73c63e3144f9",
+      "source": "先设定变量：fav=6、hasKey=false、quest=1（全局）。",
+      "translation": "先设定变量：fav=6、hasKey=false、quest=1（全局）。"
+    },
+    {
+      "key": "dialog.74fca6f4b25d",
+      "source": "文本框也可以暂时隐藏。",
+      "translation": "文本框也可以暂时隐藏。"
+    },
+    {
+      "key": "dialog.75300ae5ab9c",
+      "source": "filmMode 随时开、随时关，为演出让出焦点。",
+      "translation": "filmMode 随时开、随时关，为演出让出焦点。"
+    },
+    {
+      "key": "dialog.7a2fd0ae9554",
+      "source": "wait 指令让节奏停留 400 毫秒。",
+      "translation": "wait 指令让节奏停留 400 毫秒。"
+    },
+    {
+      "key": "dialog.7c3f6e8e396f",
+      "source": "（立绘淡入淡出，槽位互不干扰。移除用 changeFigure:none 即可。）",
+      "translation": "（立绘淡入淡出，槽位互不干扰。移除用 changeFigure:none 即可。）"
+    },
+    {
+      "key": "dialog.7d1efed51ca5",
+      "source": "夜晚街道 + 左右双立绘，同时在场。",
+      "translation": "夜晚街道 + 左右双立绘，同时在场。"
+    },
+    {
+      "key": "dialog.7fb3f8be2a1d",
+      "source": "例如 playVideo 视频播放、getUserInput 文本输入，当前运行时先记入日志，后续 Phase 补齐。",
+      "translation": "例如 playVideo 视频播放、getUserInput 文本输入，当前运行时先记入日志，后续 Phase 补齐。"
+    },
+    {
+      "key": "dialog.8055372b7a2b",
+      "source": "（看，miniAvatar 出现了。）",
+      "translation": "（看，miniAvatar 出现了。）"
+    },
+    {
+      "key": "dialog.8077d083ead9",
+      "source": "剧本由 .axs 原生 DSL 编写：先编译为 VN IR，再生成 .axb 字节码。",
+      "translation": "剧本由 .axs 原生 DSL 编写：先编译为 VN IR，再生成 .axb 字节码。"
+    },
+    {
+      "key": "dialog.83649f56bfcf",
+      "source": "放学后的走廊，夕阳斜照。",
+      "translation": "放学后的走廊，夕阳斜照。"
+    },
+    {
+      "key": "dialog.87f318a7a4d5",
+      "source": "序章结束，自动进入下一章「舞台演出」。",
+      "translation": "序章结束，自动进入下一章「舞台演出」。"
+    },
+    {
+      "key": "dialog.91875c75402f",
+      "source": "现在后台叠加了一层循环音效（BGS），独立通道、独立音量。",
+      "translation": "现在后台叠加了一层循环音效（BGS），独立通道、独立音量。"
+    },
+    {
+      "key": "dialog.92b7b542d10e",
+      "source": "（end 指令结束剧本。）",
+      "translation": "（end 指令结束剧本。）"
+    },
+    {
+      "key": "dialog.95895b7db405",
+      "source": "你想以哪种方式参观？",
+      "translation": "你想以哪种方式参观？"
+    },
+    {
+      "key": "dialog.9c3cb4c27169",
+      "source": "接下来是电影遮幅模式——上下黑边，适合关键剧情。",
+      "translation": "接下来是电影遮幅模式——上下黑边，适合关键剧情。"
+    },
+    {
+      "key": "dialog.9e2ae080c272",
+      "source": "立绘可以布置在左、中、右三个槽位，也可以自由命名。",
+      "translation": "立绘可以布置在左、中、右三个槽位，也可以自由命名。"
+    },
+    {
+      "key": "dialog.ad0d46679987",
+      "source": "（BGS 循环已停止。）",
+      "translation": "（BGS 循环已停止。）"
+    },
+    {
+      "key": "dialog.b19cb73c704e",
+      "source": "hasKey 为 false，宝箱选项被引擎禁用——玩家只能选「继续前进」。",
+      "translation": "hasKey 为 false，宝箱选项被引擎禁用——玩家只能选「继续前进」。"
+    },
+    {
+      "key": "dialog.b3f1c46dc41d",
+      "source": "本次巡礼的最后一个功能已经展示完毕。",
+      "translation": "本次巡礼的最后一个功能已经展示完毕。"
+    },
+    {
+      "key": "dialog.b44cf9bf37dc",
+      "source": "setTextbox 控制对白框显隐，配合演出使用。",
+      "translation": "setTextbox 控制对白框显隐，配合演出使用。"
+    },
+    {
+      "key": "dialog.b4762b55bb1d",
+      "source": "再来一个不带 hold 的 intro，展示自动收起的舞台化字幕。",
+      "translation": "再来一个不带 hold 的 intro，展示自动收起的舞台化字幕。"
+    },
+    {
+      "key": "dialog.b4f3240ae0b6",
+      "source": "奖金达到 200，触发奖励分支！",
+      "translation": "奖金达到 200，触发奖励分支！"
+    },
+    {
+      "key": "dialog.b75d0322bf8e",
+      "source": "这一章是引擎的「大脑」：变量、表达式与流程控制。",
+      "translation": "这一章是引擎的「大脑」：变量、表达式与流程控制。"
+    },
+    {
+      "key": "dialog.c186491aeb04",
+      "source": "这就是选择支的引擎侧实现：show 门槛、enable 门槛都由表达式驱动。",
+      "translation": "这就是选择支的引擎侧实现：show 门槛、enable 门槛都由表达式驱动。"
+    },
+    {
+      "key": "dialog.c5e9da98b6c1",
+      "source": "这一段使用了 SE（一次性音效）通道，可以同时叠加多实例。",
+      "translation": "这一段使用了 SE（一次性音效）通道，可以同时叠加多实例。"
+    },
+    {
+      "key": "dialog.c696758a106b",
+      "source": "高难度挑战成功！奖金翻倍。",
+      "translation": "高难度挑战成功！奖金翻倍。"
+    },
+    {
+      "key": "dialog.cbbd53c0ae42",
+      "source": "jumpLabel 带",
+      "translation": "jumpLabel 带"
+    },
+    {
+      "key": "dialog.d59787e6cd98",
+      "source": "这是背景切换——引擎以 Crossfade 完成过渡，没有生硬的黑屏。",
+      "translation": "这是背景切换——引擎以 Crossfade 完成过渡，没有生硬的黑屏。"
+    },
+    {
+      "key": "dialog.e4a8d0278be4",
+      "source": "三段巡礼全部完成！本次演示到此结束，感谢游玩。",
+      "translation": "三段巡礼全部完成！本次演示到此结束，感谢游玩。"
+    },
+    {
+      "key": "dialog.e75e16a131df",
+      "source": "奖金不足 200，没有额外奖励。",
+      "translation": "奖金不足 200，没有额外奖励。"
+    },
+    {
+      "key": "dialog.effe947b34aa",
+      "source": "换一个场景，背景平滑渐变，而 BGM 保持连续播放。",
+      "translation": "换一个场景，背景平滑渐变，而 BGM 保持连续播放。"
+    },
+    {
+      "key": "dialog.f18eda1031a1",
+      "source": "接下来是 callScene：携带参数调用另一个场景，子场景执行后 return 返回值。",
+      "translation": "接下来是 callScene：携带参数调用另一个场景，子场景执行后 return 返回值。"
+    },
+    {
+      "key": "dialog.f4726b1ef210",
+      "source": "返回值已写入变量 result，由 if 分支消费。",
+      "translation": "返回值已写入变量 result，由 if 分支消费。"
+    },
+    {
+      "key": "intro.3cf937d1bc3e",
+      "source": "本章还会演示几条「尚未进入可玩状态」的指令——它们会被引擎优雅降级为日志，绝不导致崩溃。",
+      "translation": "本章还会演示几条「尚未进入可玩状态」的指令——它们会被引擎优雅降级为日志，绝不导致崩溃。"
+    },
+    {
+      "key": "intro.9bdf0e4df3fb",
+      "source": "《Axolotl 美西螈引擎特性巡礼》|Native Visual Novel Engine Demo|—— 占位配音全程嘟嘟声 ——",
+      "translation": "《Axolotl 美西螈引擎特性巡礼》|Native Visual Novel Engine Demo|—— 占位配音全程嘟嘟声 ——"
+    },
+    {
+      "key": "intro.d4d331066ca2",
+      "source": "演出到此告一段落。",
+      "translation": "演出到此告一段落。"
+    },
+    {
+      "key": "speaker.4191fe8e262b",
+      "source": "我",
+      "translation": "我"
+    },
+    {
+      "key": "speaker.96f2303a455e",
+      "source": "物理老师",
+      "translation": "物理老师"
+    },
+    {
+      "key": "speaker.9cefeb9626d4",
+      "source": "Engine",
+      "translation": "Engine"
+    },
+    {
+      "key": "speaker.bf9a30881c2c",
+      "source": "雪乃",
+      "translation": "雪乃"
+    },
+    {
+      "key": "ui.button.7d7f1fa70e5c",
+      "source": "确定",
+      "translation": "确定"
+    },
+    {
+      "key": "ui.title.55ecaaae281e",
+      "source": "输入你的名字",
+      "translation": "输入你的名字"
+    }
+  ]
+}

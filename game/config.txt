@@ -1,0 +1,10 @@
+Game_name:Axolotl 美西螈引擎特性巡礼;
+Game_key:AXL_DEMO_2026;
+Title_img:background/title_bg.png;
+Title_bgm:bgm/fairy_dance.ogg;
+Game_Logo:background/title_bg.png;
+Enable_Appreciation:true;
+Enable_Continue:true;
+Enable_flowchart:true;
+Default_Language:zh_CN;
+Start_Scene:start.axs;
