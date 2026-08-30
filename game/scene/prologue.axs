@@ -4,7 +4,6 @@
 ; 本章展示的特性：
 ;   · changeBg     多背景轮换（Crossfade / Dissolve 过渡）
 ;   · changeFigure 左/中/右三槽立绘（-left / -center / -right）与移除（none）
-;   · miniAvatar   文本框旁小头像
 ;   · playEffect   BGS 循环音效（-id= 通道）与停止（none -id=）
 ;   · wait         时间停顿
 ;   · setTextbox   文本框显隐
@@ -30,11 +29,6 @@ changeBg:background/bg_night_street.png;
 changeFigure:figure/figure_hero.png -left;
 changeFigure:figure/figure_heroine.png -center;
 我:夜晚街道 + 左右双立绘，同时在场。 -Vbeep_hero.wav;
-我:右下角的小头像叫 miniAvatar，随时挂载、随时移除。 -Vbeep_hero.wav;
-miniAvatar:figure/avatar_mom.png;
-:（看，miniAvatar 出现了。）;
-miniAvatar:none;
-
 playEffect:bgm/fairy_dance.ogg -id=rain -volume=25;
 雪乃:现在后台叠加了一层循环音效（BGS），独立通道、独立音量。 -Vbeep_heroine.wav;
 wait:400;

@@ -7,7 +7,7 @@
 ;   · changeBg   背景切换（Crossfade 过渡）
 ;   · 旁白(:) / 带说话人的对白 / 续句对白（省略说话人沿用上一位）
 ;   · -V         对白挂载语音（占位嘟嘟声，VocalRouter 路由）
-;   · miniAvatar 文本框旁小头像的挂载与移除
+;   · voiceBlips 打字机音效（语音混音器发声，可随时被 -V 配音替换）
 ;   · choose     分支菜单（show 门槛演示）
 ;   · setVar     -global 全局变量（控制线性巡礼 / 自由参观两种模式）
 ;   · changeScene 跨场景跳转
@@ -25,11 +25,13 @@ changeBg:background/bg_home_livingroom.png;
 Engine:剧本由 .axs 原生 DSL 编写：先编译为 VN IR，再生成 .axb 字节码。 -Vbeep_system.wav;
 Engine:栈式虚拟机逐条执行：背景、立绘、音频、分支、存档……全部数据驱动。 -Vbeep_system.wav;
 
-miniAvatar:figure/avatar_heroine.png;
 雪乃:你好，我是本场演示的向导「雪乃」。 -Vbeep_heroine.wav;
 雪乃:每条对白都能挂载语音；你现在听到的嘟嘟声就是占位语音。 -Vbeep_heroine.wav;
-雪乃:重复出现的语音文件会被 VFS 缓存复用，不会重复读取磁盘。 -Vbeep_heroine.wav;
-miniAvatar:none;
+:接下来启用打字机音效：雪乃说话时会出现细碎的嘟嘟声。;
+voiceBlips:sfx/blip.wav -speaker=雪乃;
+雪乃:这就是打字机音效——逐字揭示时经语音混音器发出短促节拍。;
+雪乃:一旦某句挂了实配音（-V 指令），打字机音效会自动让位。 -Vbeep_heroine.wav;
+voiceBlips:none;
 :在「设置」里切换语言时，语音包会热切换为不同音型的嘟嘟声。;
 
 :你想以哪种方式参观？;
