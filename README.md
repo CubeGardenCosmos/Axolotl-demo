@@ -1,40 +1,36 @@
-# Axolotl 美西螈引擎特性巡礼 — Axolotl-demo
+# Axolotl 演示 · 主角 Sion — Axolotl-demo
 
 > CubeGardenCosmos 组织下的 **Axolotl 引擎公开演示作品**。
-> 本仓库只包含**剧本脚本与演示素材**（音乐 / 图片 / 占位语音），
+> 本仓库只包含**剧本脚本与演示素材**（音乐 / 图片 / 占位语音 / Inochi2D 木偶），
 > **不包含任何 Axolotl 引擎二进制**（可执行文件、`.axb` 字节码、`assets.pak` 等一概不提交）。
 
-《Axolotl 美西螈引擎特性巡礼》是一段用 Axolotl 原生 DSL（`.axs`）编写的特性演示，
-用一场 2～3 分钟的参观串起引擎已交付的几乎全部能力：
+《Axolotl 演示 · 主角 Sion》是一位深夜宿舍的女主角 **Sion** 带领观众
+参观引擎能力的演示作品：她用一段 2～3 分钟的线性巡礼串起引擎几乎全部能力——
+**舞台演出、多通道音频、Live2D（Inochi2D）、内置 3D 场景、LUA 小游戏、逻辑控制流**。
 
-- **多前端编译器链**：`.axs` 剧本 → VN IR → `.axb` 字节码 → 栈式虚拟机执行；
-- **多场景 / 多分支**：入口大厅 + 序章 + 舞台演出席 + 逻辑控制流 + `callScene` 子场景；
-- **舞台演出**：背景 Crossfade、三槽立绘、miniAvatar、电影遮幅、文本框显隐、全屏定格字幕；
-- **多通道音频**：BGM 淡入/音量、对白语音（占位嘟嘟声）、BGS 循环音效、SE 一次音效；
-- **纯状态机剧本逻辑**：变量（含全局/局部作用域）、`if`、`jumpLabel -when`、
-  带展示门槛/可选门槛的 `choose`、子场景参数与 `return` 返回值；
-- **i18n / 多语音包**：`vocal/`（共享）与 `vocal/{zh_CN,en_US}/`（分语种）三层语音路由，
-  设置中切换语言可热换嘟嘟声音型；
-- **图鉴与调试**：`unlockCg` / `unlockBgm` 解锁登记、`showVars` 变量覆盖层；
-- **优雅降级**：`playVideo` / `getUserInput` 等尚未完成可玩渲染的指令被记录为日志，
-  绝不导致崩溃（缺失资产同样优雅降级）。
+演示项目同时也是**开放脚本**：每一章 `.axs` 都以注释驱动教学（测试用例即教程
+源码），`game/lua/snake.lua` 是全量注释的 LUA API 活教程，`scripts/gen_sion_puppet.py`
+则是 Sion 木偶的生成器（一个可直接学习的 Inochi2D `.inp` 建模示例）。
 
-## 玩法路径
+## 能力清单（按章节）
 
 | 章节 | 剧本文件 | 主要特性 |
 | :--- | :--- | :--- |
-| 入口大厅 | `game/scene/start.axs` | intro 定格、BGM、背景、miniAvatar、分支菜单、`end` |
-| 序章 · 开场 | `game/scene/prologue.axs` | 背景轮换、三槽立绘、BGS/SE、wait、filmMode、setTextbox |
+| 入口大厅 | `game/scene/start.axs` | Sion 登场、intro 定格、BGM、分支菜单、`visited` 门控、`end` |
+| 序章 · 深夜来电 | `game/scene/prologue.axs` | 背景轮换（Crossfade）、三槽立绘、BGS/SE、wait、filmMode、setTextbox |
 | 舞台演出席 | `game/scene/chapter_stage.axs` | 图鉴解锁、intro、playVideo/getUserInput 降级、showVars |
-| 音乐混音台 | `game/scene/chapter_audio.axs` | `.axaudiomix` 分轨编曲：全轨齐响 / `-track=1,2|2,3|1,3` 选轨 / `-track 1|2|3` 独奏 / **换轨不重播**（同资源切换只动启用通道）/ `bgm:none` 唯一停播 / 单声道素材普通播放；自由参观下给**测试台 choose 菜单**（逐项试听、方便调试） |
-| 逻辑与控制流 | `game/scene/chapter_logic.axs` | 变量、if、-when、带门槛 choose、callScene/return |
+| 音乐混音台 | `game/scene/chapter_audio.axs` | `.axaudiomix` 分轨编曲：全轨齐响 / `-track=` 选轨 / `-track 1` 独奏 / **换轨不重播** / `bgm:none` 唯一停播 / 单声道素材 |
+| **Live2D 角色演出** | `game/scene/chapter_inochi.axs` | **Inochi2D `.inp` 木偶**：`playInochi -model=` 装配；`-motion=` 循环运动（Idle / Wave / Talk）；`-expression=` 表情（Blink / Surprise / Sad）；骨骼（左臂两层）/ 表情 / 口型全由数据驱动 |
+| **3D 场景演示** | `game/scene/chapter_3d.axs` | **内置 3D 舞台**：`show3d:city` 夜间微缩都市 / `show3d:orbit` 太阳系玩具；`-spin` 自转；`show3d:none` 收起 |
+| **LUA 贪吃蛇小游戏** | `game/scene/chapter_snake.axs` | **LUA 脚本层**：`game/lua/snake.lua` 随 VFS 加载，只许调 `axolotl.*` API；输入→步进→覆盖层渲染→`snake_score` 变量写回 axs；无头超时兜底保证 CI 整场可跑 |
+| 逻辑与控制流 | `game/scene/chapter_logic.axs` | 变量（全局/局部）、if、`-when` 门槛、带 show/enable 门槛的 choose、callScene/return |
 | 子场景 | `game/scene/subscene_quiz.axs` | callScene 参数注入与 `return:prize*2` 返回值 |
 
 大厅提供两种参观模式：
-- **一键巡礼**（默认）：顺序播放全部章节，自动衔接，最终 `end` 回到标题；
-- **自由参观**：进入大厅**章节菜单**（序章 / 舞台演出席 / 音频演播室·混音台 /
-  逻辑控制流），每章结束后返回同一菜单，可反复直达任意章节；回大厅时开场白
-  只在首访播放（`visited` 门控），不重播 intro 定格。
+- **线性巡礼**（默认）：Sion 全程导游，按 序章 → 舞台 → 混音台 → Live2D → 3D →
+  贪吃蛇 → 逻辑 的顺序自动衔接，最终 `end` 回到标题；
+- **自由参观**：进入大厅**章节菜单**（上述全部章节直达），每章结束回到同一菜单；
+  回大厅时开场白只在首访播放（`visited` 门控）。
 
 ## 如何运行
 
@@ -52,55 +48,62 @@ cargo run -p axolotl-app --features windowed -- --game-dir /path/to/Axolotl-demo
 启动时引擎会对 `game/scene/` 做一次 `parse → lower → emit` 并写出 `scenes.axb`
 写穿缓存（该产物不会被提交，见 `.gitignore`）。
 
-### 最近一次无头验收快照
+### 最近一次无头验收快照（Phase 5 · Sion demo）
 
 ```
-headless run complete — steps=80 lines=76 choices=2 entry="start.axs" script ended
-axolotlc check <game/scene>  →  checked 6 scene files: 0 errors, 0 warnings
-axolotlc doctor <game>       →  18 notes, 1 warning(缺入口 exe，引擎仓库构建才有), 0 errors
+headless run complete — steps=118 lines=97 choices=2 entry="start.axs" script ended
+axolotlc check <game/scene>  →  checked 9 scene files: 0 errors, 0 warnings
+axolotlc lua check <game/lua>→  1 script(s), 0 error(s) — snake boots in the sandbox
+axolotlc doctor <game>       →  22 notes, 1 warning(缺入口 exe，引擎仓库构建才有), 0 errors
+三后端 parity（loose / assets.pak / 内容寻址 store）：steps=118 lines=97 choices=2 完全一致
 ```
 > 混音台素材：`game/bgm/fairy_dance_{pno,harp,violin}.wav` 为 Fairy Dance 三声部
-> stem（146318ms，IEEE Float 双声道 44.1kHz，时长一致满足 ±50ms 契约）；
-> `fairy_dance_mono.wav` 为派生单声道测试剪辑（45s）。
+> stem（146318ms，IEEE Float 双声道 44.1kHz）；`fairy_dance_mono.wav` 为派生
+> 单声道剪辑（45s）。Live2D 木偶 `game/puppet/sion.inp`（21KB）由
+> `scripts/gen_sion_puppet.py` 生成：10 个部件纹理 + 6 条动画（Idle / Blink /
+> Talk / Wave / Surprise / Sad）。
 
 ## 目录结构
 
 ```
 game/
-├── config.txt            # 引擎启动配置（标题图/BGM、默认语言 zh_CN、启用手册）
-├── scene/*.axs           # 剧本脚本（本仓库的“灵魂”）
-├── bgm/
-│   ├── fairy_dance.mp3   # 指定源文件（本地路径的一份拷贝）
-│   └── fairy_dance.ogg   # 引擎可播放的 Vorbis 转码（当前音频管线解码 WAV/OGG）
-├── background/*.png      # BR 项目背景图（JPG→PNG 转换，引擎图片管线解码 PNG/TGA）
-├── figure/*.png          # BR 项目立绘与小头像
-├── vocal/                # 占位嘟嘟声（共享语音层）
-│   ├── zh_CN/            # zh_CN 分语种语音层（双连嘟音型）
-│   └── en_US/            # en_US 分语种语音层（下行嘟音型）
-├── video/demo.webm       # 占位（playVideo 演示引用；运行时仅降级记录）
+├── config.txt            # 引擎启动配置（Game_name「Axolotl 演示 · 主角 Sion」…）
+├── scene/*.axs           # 剧本脚本（本仓库的“灵魂”，注释驱动教学）
+├── lua/snake.lua         # LUA 贪吃蛇（Phase 4 引擎示例的 demo 落地，全量注释）
+├── puppet/sion.inp       # Sion 的 Inochi2D 木偶（骨骼/表情/口型，生成器见 scripts/）
+├── bgm/                  # 混音台三声部 stem + 单曲（mp3/ogg/wav）
+├── background/*.png      # 背景图（JPG→PNG 转换，引擎图片管线解码 PNG/TGA）
+├── figure/*.png          # 立绘与小头像（舞台演出席）
+├── vocal/                # 占位嘟嘟声（共享 / zh_CN / en_US 三层语音路由）
+└── video/demo.webm       # 占位（playVideo 演示引用；运行时仅降级记录）
 docs/
-├── i18n/dialogues.sample.zh_CN.json   # axolotlc i18n extract 提取的字典样例（74 键）
+└── i18n/dialogues.sample.zh_CN.json   # axolotlc i18n extract 提取的字典样例
 scripts/
+├── gen_sion_puppet.py    # Sion 木偶生成器（Inochi2D 规范建模示例，纯标准库）
 ├── prepare_assets.py     # 一键准备素材（音乐转码/图片转换/生成嘟嘟声）
 └── gen_beeps.py          # 占位语音生成器（纯标准库）
 ```
 
 ## 素材说明
 
-- **音乐**：`Fairy Dance.mp3`（用户指定来源）。引擎当前音频管线只启用 WAV/Vorbis
-  （`bevy/wav` + `bevy/vorbis`），故仓库同时提供等内容的 `fairy_dance.ogg` 供播放，
-  MP3 作为源文件保留。
-- **图片**：取自 `BR`（Believed. Relieved.）项目（用户指定），背景图按引擎当前
-  PNG/TGA 图片管线做了 JPG→PNG 转换；立绘为原 PNG。
-- **语音**：占位**嘟嘟声**，由 `scripts/gen_beeps.py` 生成（正弦波短音）；三个语音层
-  （共享 / zh_CN / en_US）用不同音型区分，方便在设置里演示语音包热切换。
+- **Sion 木偶**：`game/puppet/sion.inp` 由本仓库脚本生成（Inochi2D v2 容器，
+  10 枚程序化 PNG 纹理）。骨骼（左臂两层）、表情（EyeOpen/MouthOpen/
+  MouthSmile/BrowLift）、待机律动（BodyBob/HairSway）与六条动画全部可被
+  `playInochi` 指名播放；生成器源码即建模教程。
+- **音乐**：`Fairy Dance` 三声部 stem（用户指定源）；引擎当前音频管线启用
+  WAV/Vorbis，故仓库同时提供 `fairy_dance.ogg` 等内容的单曲版本。
+- **图片**：取自 `BR`（Believed. Relieved.）项目（用户指定），背景图按引擎
+  当前 PNG/TGA 图片管线做了 JPG→PNG 转换；立绘为原 PNG。
+- **语音**：占位**嘟嘟声**，由 `scripts/gen_beeps.py` 生成（正弦波短音）；
+  三个语音层（共享 / zh_CN / en_US）用不同音型区分，方便在设置里演示语音包热切换。
 - 素材的原始版权归其来源项目所有；本仓库仅作演示用途。参见 `NOTICE.md`。
 
 ## 重新生成素材
 
 ```bash
-pip3 install miniaudio          # 依赖之一（MP3→PCM 解码）
-python3 scripts/prepare_assets.py   # 需要 BR 的 game/ 目录与 GStreamer(gst-launch-1.0)
+python3 scripts/gen_sion_puppet.py   # 重新生成 game/puppet/sion.inp（纯标准库）
+pip3 install miniaudio               # prepare_assets 依赖之一（MP3→PCM 解码）
+python3 scripts/prepare_assets.py    # 需要 BR 的 game/ 目录与 GStreamer(gst-launch-1.0)
 ```
 
 ## 许可

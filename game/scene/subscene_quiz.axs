@@ -11,9 +11,9 @@
 :（子场景开始：参数 difficulty、prize 已作为局部变量注入，BGM 与舞台状态保持调用方现场。）;
 
 if:difficulty>=2|jumpLabel:hard;
-雪乃:难度不足 2，只回馈基础奖金。 -Vbeep_heroine.wav;
+Sion:难度不足 2，只回馈基础奖金。 -Vbeep_heroine.wav;
 return:prize;
 
 label:hard;
-雪乃:高难度挑战成功！奖金翻倍。 -Vbeep_heroine.wav;
+Sion:高难度挑战成功！奖金翻倍。 -Vbeep_heroine.wav;
 return:prize*2;

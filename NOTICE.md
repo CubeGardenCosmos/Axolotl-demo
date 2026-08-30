@@ -22,3 +22,9 @@
 | `game/vocal/*.wav` | 本仓库 `scripts/gen_beeps.py` 生成 | 占位嘟嘟声，无版权风险 |
 
 本仓库以公开演示形式发布；若需商业使用其中任一素材，请联系 CubeGarden Studio。
+## Phase 5 新增素材
+
+| 素材 | 来源 | 说明 |
+| :--- | :--- | :--- |
+| `game/puppet/sion.inp` | 本仓库 `scripts/gen_sion_puppet.py` 生成 | Sion 的 Inochi2D 木偶（纯标准库程序化绘制，无外部资产），许可随本仓库演示条款 |
+| `game/lua/snake.lua` | Axolotl 引擎 `crates/axolotl-lua/scripts/snake.lua`（Phase 4 示例） | 沙箱 LUA 贪吃蛇教学脚本，复用至 demo |
