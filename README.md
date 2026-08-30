@@ -26,7 +26,7 @@
 | 入口大厅 | `game/scene/start.axs` | intro 定格、BGM、背景、miniAvatar、分支菜单、`end` |
 | 序章 · 开场 | `game/scene/prologue.axs` | 背景轮换、三槽立绘、BGS/SE、wait、filmMode、setTextbox |
 | 舞台演出席 | `game/scene/chapter_stage.axs` | 图鉴解锁、intro、playVideo/getUserInput 降级、showVars |
-| 音乐混音台 | `game/scene/chapter_audio.axs` | `.axaudiomix` 分轨编曲：全轨齐响 / `-track=1,2|2,3|1,3` 选轨 / `-track 1|2|3` 独奏 / `bgm:none` 收束 / 单声道素材普通播放 |
+| 音乐混音台 | `game/scene/chapter_audio.axs` | `.axaudiomix` 分轨编曲：全轨齐响 / `-track=1,2|2,3|1,3` 选轨 / `-track 1|2|3` 独奏 / **换轨不重播**（同资源切换只动启用通道）/ `bgm:none` 唯一停播 / 单声道素材普通播放；自由参观下给**测试台 choose 菜单**（逐项试听、方便调试） |
 | 逻辑与控制流 | `game/scene/chapter_logic.axs` | 变量、if、-when、带门槛 choose、callScene/return |
 | 子场景 | `game/scene/subscene_quiz.axs` | callScene 参数注入与 `return:prize*2` 返回值 |
 
