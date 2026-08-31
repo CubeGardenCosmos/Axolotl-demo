@@ -4,7 +4,7 @@
 ; 引擎的 Live2D 兼容层：Inochi2D（.inp）木偶 —— 骨骼形变、表情、口型全部
 ; 由数据驱动的解算器与动画播放器完成。本章展示的指令：
 ;
-;   · playInochi:<actor> -model=puppet/sion.inp
+;   · playInochi:<actor> -model=puppet/aka.inp
 ;       把木偶装配到角色槽位（actor 名即槽位 id；与 changeFigure 的 -id=
 ;       自由槽同语义）。装配后角色立即以作者默认姿态上台。
 ;   · playInochi:<actor> -motion=<动画名>
@@ -24,9 +24,9 @@
 bgm:bgm/fairy_dance.ogg -volume=45 -enter=600;
 changeBg:background/bg_classroom.png;
 Sion:这一章，我换一个形态来见你——不是静态立绘，而是数据驱动的 Live2D 木偶。 -Vbeep_heroine.wav;
-:（片源：game/puppet/sion.inp，Inochi2D 规范；骨骼 / 表情 / 口型由解算器每帧求解。）;
+:（片源：game/puppet/aka.inp，Inochi2D 规范；骨骼 / 表情 / 口型由解算器每帧求解。）;
 
-playInochi:sion -model=puppet/sion.inp;
+playInochi:sion -model=puppet/aka.inp;
 wait:600;
 Sion:这是我在引擎里的第一帧：playInochi 把 .inp 木偶装配上舞台。 -Vbeep_heroine.wav;
 wait:200;
