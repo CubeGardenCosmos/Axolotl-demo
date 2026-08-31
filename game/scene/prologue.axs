@@ -12,13 +12,13 @@
 ;   · if + jumpLabel  线性巡礼 / 自由参观分流
 ; =============================================================================
 
-bgm:bgm/fairy_dance.ogg -volume=50 -enter=800;
+bgm:bgm/wonderful_life.mp3 -volume=50 -enter=800;
 changeBg:background/bg_bedroom_night.png;
 :深夜的宿舍，台灯还亮着。窗外是安静的校园。;
 Sion:……我是 Sion，这栋宿舍里唯一还醒着的人。 -Vbeep_heroine.wav;
 Sion:引擎的第一个能力：changeBg 换背景，自带 Crossfade 过渡。 -Vbeep_heroine.wav;
 
-bgm:bgm/fairy_dance.ogg -volume=42;
+bgm:bgm/wonderful_life.mp3 -volume=42;
 playEffect:bgm/fairy_dance_mono.wav -id=rain -volume=18;
 Sion:bgm 播放音乐；playEffect 循环环境音走独立通道（BGS）。 -Vbeep_heroine.wav;
 wait:400;

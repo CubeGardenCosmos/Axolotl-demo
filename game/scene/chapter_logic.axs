@@ -11,7 +11,7 @@
 ;   · changeScene 跨场景跳转
 ; =============================================================================
 
-bgm:bgm/fairy_dance.ogg -volume=45 -enter=600;
+bgm:bgm/wonderful_life.mp3 -volume=45 -enter=600;
 changeBg:background/bg_home_livingroom.png;
 setVar:fav=6;
 setVar:hasKey=false;

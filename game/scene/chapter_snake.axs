@@ -16,7 +16,7 @@
 ;   + 贪心 AI + 强制触壁），以失败自然结束——CI 不需要任何超时轮询。
 ; =============================================================================
 
-bgm:bgm/fairy_dance.ogg -volume=35 -enter=600;
+bgm:bgm/wonderful_life.mp3 -volume=35 -enter=600;
 changeBg:background/bg_classroom.png;
 Sion:最后一站——不是看演出，是「玩」。这段贪吃蛇完全是 LUA 脚本写的。 -Vbeep_heroine.wav;
 Sion:接下来的画面会整个交给小游戏场景：全屏棋盘、方向键 / WASD 移动、R 重开；撞墙或咬到自己就是结束，结果会回来接管剧本。 -Vbeep_heroine.wav;

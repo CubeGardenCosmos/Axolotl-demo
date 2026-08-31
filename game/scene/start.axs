@@ -22,7 +22,7 @@ setVar:visited=1 -global;
 
 intro:《Axolotl 演示 · 主角 Sion》|Native Visual Novel Engine Demo|Live2D Inochi · 3D 舞台 · LUA 小游戏 -hold;
 
-bgm:bgm/fairy_dance.ogg -volume=55 -enter=1500;
+bgm:bgm/wonderful_life.mp3 -volume=55 -enter=1500;
 changeBg:background/bg_bedroom_night.png;
 
 Sion:……深夜的房间里，只有屏幕的光还亮着。 -Vbeep_heroine.wav;

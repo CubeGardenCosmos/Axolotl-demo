@@ -15,7 +15,7 @@
 ; wgpu 实时渲染。
 ; =============================================================================
 
-bgm:bgm/fairy_dance.ogg -volume=40 -enter=600;
+bgm:bgm/wonderful_life.mp3 -volume=40 -enter=600;
 changeBg:none;
 Sion:先熄掉 2D 背景——接下来的画面交给一片真正的 3D 舞台。 -Vbeep_heroine.wav;
 

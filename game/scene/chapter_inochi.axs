@@ -21,7 +21,7 @@
 ; HairSway）全部可被 -motion / -expression 指名播放。
 ; =============================================================================
 
-bgm:bgm/fairy_dance.ogg -volume=45 -enter=600;
+bgm:bgm/wonderful_life.mp3 -volume=45 -enter=600;
 changeBg:background/bg_classroom.png;
 Sion:这一章，我换一个形态来见你——不是静态立绘，而是数据驱动的 Live2D 木偶。 -Vbeep_heroine.wav;
 :（片源：game/puppet/aka.inp，Inochi2D 规范；骨骼 / 表情 / 口型由解算器每帧求解。）;

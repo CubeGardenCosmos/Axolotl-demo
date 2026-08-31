@@ -1,7 +1,7 @@
 Game_name:Axolotl 演示 · 主角 Sion;
 Game_key:AXL_SION_2026;
 Title_img:background/title_bg.png;
-Title_bgm:bgm/fairy_dance.ogg;
+Title_bgm:bgm/title_koneko.mp3;
 Game_Logo:background/title_bg.png;
 Enable_Appreciation:true;
 Enable_Continue:true;
