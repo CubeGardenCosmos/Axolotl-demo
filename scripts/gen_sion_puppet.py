@@ -221,17 +221,16 @@ TEXTURES = {
 # ---------------------------------------------------------------------------
 
 
-def quad(cx, cy, w, h):
-    """中心 (cx,cy)、宽 w 高 h 的平面四边形（像素坐标，y 向上）。"""
+def quad(w, h):
+    """中心 (0,0)、宽 w 高 h 的平面四边形（局部像素坐标，中心为原点，y 向上）。"""
     hw, hh = w / 2.0, h / 2.0
-    px = [cx - hw, cy + hh, cx + hw, cy + hh, cx - hw, cy - hh, cx + hw, cy - hh]
-    uu = [0.0, 1.0, 0.0, 1.0]
-    vv = [1.0, 1.0, 0.0, 0.0]
+    px = [-hw, hh, hw, hh, -hw, -hh, hw, -hh]
+    uvs = [0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0]
     return {
         "mesh": {
             "verts": px,
             "indices": [0, 1, 2, 2, 1, 3],
-            "uvs": uu + vv,
+            "uvs": uvs,
             "origin": [0.0, 0.0],
         }
     }
@@ -246,13 +245,13 @@ def part(uuid, name, cx, cy, w, h, tex_id, tint=(1, 1, 1), opacity=1.0):
         "zsort": 0,
         "transform": {"trans": [cx, cy, 0.0], "rot": [0.0, 0.0, 0.0], "scale": [1.0, 1.0, 1.0]},
         "lockToRoot": False,
-        **quad(cx, cy, w, h),
+        **quad(w, h),
         "textures": [tex_id, 4294967295, 4294967295],
         "blend_mode": "Normal",
         "tint": list(tint),
         "screenTint": [1.0, 1.0, 1.0],
         "emissionStrength": 0.0,
-        "mask_threshold": 0.5,
+        "mask_threshold": 0.05,
         "opacity": opacity,
     }
     return node
