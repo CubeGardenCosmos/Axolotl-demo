@@ -152,6 +152,11 @@
       "translation": "这是我在引擎里的第一帧：playInochi 把 .inp 木偶装配上舞台。"
     },
     {
+      "key": "dialog.0c5984544c7f",
+      "source": "一条都没吃到……没关系，游戏循环本身已经完整跑通：挂起 → 全屏渲染 → 输入 → 步进 → 失败退出 → 结果桥。",
+      "translation": "一条都没吃到……没关系，游戏循环本身已经完整跑通：挂起 → 全屏渲染 → 输入 → 步进 → 失败退出 → 结果桥。"
+    },
+    {
       "key": "dialog.0e0640ec0591",
       "source": "逻辑章完成，我们回大厅继续。",
       "translation": "逻辑章完成，我们回大厅继续。"
@@ -215,11 +220,6 @@
       "key": "dialog.2a9415d485c8",
       "source": "先熄掉 2D 背景——接下来的画面交给一片真正的 3D 舞台。",
       "translation": "先熄掉 2D 背景——接下来的画面交给一片真正的 3D 舞台。"
-    },
-    {
-      "key": "dialog.2c814efb09dd",
-      "source": "一条都没吃到……没关系，游戏循环本身已经完整跑通：输入 → 步进 → 渲染 → 计分。",
-      "translation": "一条都没吃到……没关系，游戏循环本身已经完整跑通：输入 → 步进 → 渲染 → 计分。"
     },
     {
       "key": "dialog.2f93d6277d62",
@@ -287,6 +287,16 @@
       "translation": "离场与静态立绘同一套槽位语义。下一站是 3D。"
     },
     {
+      "key": "dialog.4ca86e0de3cf",
+      "source": "好——撞墙 / 咬到自己，场景按约定退出了。snake_result 拿到的是脚本声明的退出结果。",
+      "translation": "好——撞墙 / 咬到自己，场景按约定退出了。snake_result 拿到的是脚本声明的退出结果。"
+    },
+    {
+      "key": "dialog.4cd2d118b19d",
+      "source": "（剧本在此挂起——LUA 全屏场景接管游戏画布，直到“失败”返回。无头 CI 下脚本自推演并以撞墙结束。）",
+      "translation": "（剧本在此挂起——LUA 全屏场景接管游戏画布，直到“失败”返回。无头 CI 下脚本自推演并以撞墙结束。）"
+    },
+    {
       "key": "dialog.50336b0066ea",
       "source": "切换语言时，语音包会热切换为不同音型的嘟嘟声。",
       "translation": "切换语言时，语音包会热切换为不同音型的嘟嘟声。"
@@ -347,6 +357,11 @@
       "translation": "舞台演出席完成，我们回大厅继续。"
     },
     {
+      "key": "dialog.66fa970bd3ef",
+      "source": "接下来的画面会整个交给小游戏场景：全屏棋盘、方向键 / WASD 移动、R 重开；撞墙或咬到自己就是结束，结果会回来接管剧本。",
+      "translation": "接下来的画面会整个交给小游戏场景：全屏棋盘、方向键 / WASD 移动、R 重开；撞墙或咬到自己就是结束，结果会回来接管剧本。"
+    },
+    {
       "key": "dialog.67645a89ff76",
       "source": "本次巡礼的全部能力章节都已经走完：舞台、音频、Live2D、3D、LUA、逻辑。",
       "translation": "本次巡礼的全部能力章节都已经走完：舞台、音频、Live2D、3D、LUA、逻辑。"
@@ -402,6 +417,11 @@
       "translation": "文本框也可以暂时隐藏。"
     },
     {
+      "key": "dialog.76155634fa05",
+      "source": "咦，不是正常失败退出的？……不管怎样，场景已经回来了。",
+      "translation": "咦，不是正常失败退出的？……不管怎样，场景已经回来了。"
+    },
+    {
       "key": "dialog.7878411c6b00",
       "source": "（若把它写进 .axaudiomix 轨道，axolotlc check / doctor 会报「仅双声道」并拒绝。）",
       "translation": "（若把它写进 .axaudiomix 轨道，axolotlc check / doctor 会报「仅双声道」并拒绝。）"
@@ -437,14 +457,14 @@
       "translation": "changeFigure 把角色立绘放到中间槽位——三槽立绘（左/中/右）都由它管理。"
     },
     {
+      "key": "dialog.8d34593506c4",
+      "source": "有得分！如果你在窗口里玩过，分数就是刚才那局的——LUA 维护的变量直接变成剧情。",
+      "translation": "有得分！如果你在窗口里玩过，分数就是刚才那局的——LUA 维护的变量直接变成剧情。"
+    },
+    {
       "key": "dialog.8d6a2b8e48b6",
       "source": "下一站（也是巡礼的收官）：逻辑与控制流。",
       "translation": "下一站（也是巡礼的收官）：逻辑与控制流。"
-    },
-    {
-      "key": "dialog.921d80f5beb6",
-      "source": "（LUA 层随剧加载：lua/snake.lua ready: 22x14。样例源码全量注释，是 LUA API 的活教程。）",
-      "translation": "（LUA 层随剧加载：lua/snake.lua ready: 22x14。样例源码全量注释，是 LUA API 的活教程。）"
     },
     {
       "key": "dialog.9238d329b9ee",
@@ -460,11 +480,6 @@
       "key": "dialog.92c107a524bb",
       "source": "bgm 播放音乐；playEffect 循环环境音走独立通道（BGS）。",
       "translation": "bgm 播放音乐；playEffect 循环环境音走独立通道（BGS）。"
-    },
-    {
-      "key": "dialog.9526b53dbd11",
-      "source": "snake_score 与 snake_state 都是 LUA 写回的变量——剧情与玩法可以互相读取。",
-      "translation": "snake_score 与 snake_state 都是 LUA 写回的变量——剧情与玩法可以互相读取。"
     },
     {
       "key": "dialog.95895b7db405",
@@ -492,6 +507,11 @@
       "translation": "最后一站——不是看演出，是「玩」。这段贪吃蛇完全是 LUA 脚本写的。"
     },
     {
+      "key": "dialog.a0f5903a237b",
+      "source": "snake_score / snake_state / snake_result 全部来自 LUA——执行 LUA 时引擎给出返回通道，也允许脚本直接接管变量，两种姿势都能用。",
+      "translation": "snake_score / snake_state / snake_result 全部来自 LUA——执行 LUA 时引擎给出返回通道，也允许脚本直接接管变量，两种姿势都能用。"
+    },
+    {
       "key": "dialog.a346142d0b9b",
       "source": "引擎的第一个能力：changeBg 换背景，自带 Crossfade 过渡。",
       "translation": "引擎的第一个能力：changeBg 换背景，自带 Crossfade 过渡。"
@@ -500,11 +520,6 @@
       "key": "dialog.a9c26076f4a4",
       "source": "独奏：3 号小提琴。",
       "translation": "独奏：3 号小提琴。"
-    },
-    {
-      "key": "dialog.ab0c2da0fd64",
-      "source": "棋盘渲染在 GUI 覆盖层，输入走 axolotl.input，计分写回 axs 变量——脚本不碰任何引擎底层。",
-      "translation": "棋盘渲染在 GUI 覆盖层，输入走 axolotl.input，计分写回 axs 变量——脚本不碰任何引擎底层。"
     },
     {
       "key": "dialog.ab5b3f8bd744",
@@ -642,11 +657,6 @@
       "translation": "……我是 Sion，这栋宿舍里唯一还醒着的人。"
     },
     {
-      "key": "dialog.dc555a22cc40",
-      "source": "有得分！如果窗口在前台，你现在应该已经玩过一小会儿了。",
-      "translation": "有得分！如果窗口在前台，你现在应该已经玩过一小会儿了。"
-    },
-    {
       "key": "dialog.def5f7fd6019",
       "source": "音频巡礼到此为止，我们回大厅继续。",
       "translation": "音频巡礼到此为止，我们回大厅继续。"
@@ -687,11 +697,6 @@
       "translation": "返回值已写入变量 result，由 if 分支消费。"
     },
     {
-      "key": "dialog.f5963968e284",
-      "source": "游戏已经在你屏幕上了：方向键 / WASD 移动，R 重开棋盘，撞墙或咬到自己就结束。",
-      "translation": "游戏已经在你屏幕上了：方向键 / WASD 移动，R 重开棋盘，撞墙或咬到自己就结束。"
-    },
-    {
       "key": "dialog.f5a72bdf37d6",
       "source": "高手！得分超过 5——这套 LUA 层完全可以驱动正式的迷你玩法。",
       "translation": "高手！得分超过 5——这套 LUA 层完全可以驱动正式的迷你玩法。"
@@ -700,6 +705,11 @@
       "key": "dialog.f79f69a1535f",
       "source": "这一章，我换一个形态来见你——不是静态立绘，而是数据驱动的 Live2D 木偶。",
       "translation": "这一章，我换一个形态来见你——不是静态立绘，而是数据驱动的 Live2D 木偶。"
+    },
+    {
+      "key": "dialog.fbf41d2aaa85",
+      "source": "可别小看它——渲染是精灵矩形，输入走 axolotl.input，计分用 axolotl.var 写回，退出用 axolotl.scene.end。脚本全程不碰引擎底层。",
+      "translation": "可别小看它——渲染是精灵矩形，输入走 axolotl.input，计分用 axolotl.var 写回，退出用 axolotl.scene.end。脚本全程不碰引擎底层。"
     },
     {
       "key": "dialog.fcbeff1a132b",

@@ -22,7 +22,7 @@
 | 音乐混音台 | `game/scene/chapter_audio.axs` | `.axaudiomix` 分轨编曲：全轨齐响 / `-track=` 选轨 / `-track 1` 独奏 / **换轨不重播** / `bgm:none` 唯一停播 / 单声道素材 |
 | **Live2D 角色演出** | `game/scene/chapter_inochi.axs` | **Inochi2D `.inp` 木偶**：`playInochi -model=` 装配；`-motion=` 循环运动（Idle / Wave / Talk）；`-expression=` 表情（Blink / Surprise / Sad）；骨骼（左臂两层）/ 表情 / 口型全由数据驱动 |
 | **3D 场景演示** | `game/scene/chapter_3d.axs` | **内置 3D 舞台**：`show3d:city` 夜间微缩都市 / `show3d:orbit` 太阳系玩具；`-spin` 自转；`show3d:none` 收起 |
-| **LUA 贪吃蛇小游戏** | `game/scene/chapter_snake.axs` | **LUA 脚本层**：`game/lua/snake.lua` 随 VFS 加载，只许调 `axolotl.*` API；输入→步进→覆盖层渲染→`snake_score` 变量写回 axs；无头超时兜底保证 CI 整场可跑 |
+| **LUA 贪吃蛇小游戏** | `game/scene/chapter_snake.axs` | **LUA 全屏独立场景**：`runLua:snake.lua -result=snake_result` 挂起剧本、全屏画布接管游戏画面；渲染走 `axolotl.gui.rect/text/clear` 精灵矩形，输入走 `axolotl.input`；**失败即退出**（撞墙/咬自己 → `axolotl.scene.exit("over")`），结果经 `-result=` 回写、`snake_score`/`snake_state` 由 LUA 直接接管剧本变量；无头 CI 走确定性自推演（固定种子 + 贪心 AI，`score=1` 可复现） |
 | 逻辑与控制流 | `game/scene/chapter_logic.axs` | 变量（全局/局部）、if、`-when` 门槛、带 show/enable 门槛的 choose、callScene/return |
 | 子场景 | `game/scene/subscene_quiz.axs` | callScene 参数注入与 `return:prize*2` 返回值 |
 
@@ -51,11 +51,11 @@ cargo run -p axolotl-app --features windowed -- --game-dir /path/to/Axolotl-demo
 ### 最近一次无头验收快照（Phase 5 · Sion demo）
 
 ```
-headless run complete — steps=118 lines=97 choices=2 entry="start.axs" script ended
+headless run complete — steps=110 lines=97 choices=2 entry="start.axs" script ended（贪吃蛇场景确定性自推演 score=1 state=over 后自然失败退出）
 axolotlc check <game/scene>  →  checked 9 scene files: 0 errors, 0 warnings
 axolotlc lua check <game/lua>→  1 script(s), 0 error(s) — snake boots in the sandbox
 axolotlc doctor <game>       →  22 notes, 1 warning(缺入口 exe，引擎仓库构建才有), 0 errors
-三后端 parity（loose / assets.pak / 内容寻址 store）：steps=118 lines=97 choices=2 完全一致
+三后端 parity（loose / assets.pak / 内容寻址 store）：steps=110 lines=97 choices=2 完全一致
 ```
 > 混音台素材：`game/bgm/fairy_dance_{pno,harp,violin}.wav` 为 Fairy Dance 三声部
 > stem（146318ms，IEEE Float 双声道 44.1kHz）；`fairy_dance_mono.wav` 为派生
