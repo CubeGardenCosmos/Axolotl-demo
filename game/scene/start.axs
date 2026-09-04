@@ -35,20 +35,27 @@ Sion:每条对白都能挂载语音；你现在听到的嘟嘟声就是占位语
 Sion:切换语言时，语音包会热切换为不同音型的嘟嘟声。 -Vbeep_heroine.wav;
 voiceBlips:none;
 
-:你想以哪种方式参观？;
-choose:线性巡礼（Sion 全程导游，含新能力章节）:begin_tour|自由参观（大厅章节直达）:chapter_menu|结束演示:quit;
+; —— 大厅 = 全屏画布主菜单（左右布局：左侧章节列 + 右侧品牌区）——
+; 触控点击 / 无头自推演均把结果写进 menu_choice，随后按值跳转。
+label:chapter_menu;
+runLua:title_menu.lua -result=menu_choice;
+if:menu_choice==begin_tour|jumpLabel:begin_tour;
+if:menu_choice==ch_prologue|jumpLabel:ch_prologue;
+if:menu_choice==ch_stage|jumpLabel:ch_stage;
+if:menu_choice==ch_audio|jumpLabel:ch_audio;
+if:menu_choice==ch_inochi|jumpLabel:ch_inochi;
+if:menu_choice==ch_3d|jumpLabel:ch_3d;
+if:menu_choice==ch_snake|jumpLabel:ch_snake;
+if:menu_choice==ch_logic|jumpLabel:ch_logic;
+if:menu_choice==quit|jumpLabel:quit;
+choose:线性巡礼（Sion 全程导游）:begin_tour|结束演示:quit;
 
 label:begin_tour;
 setVar:tour=1 -global;
 Sion:好的，以线性巡礼模式开始——每章结束自动接续下一章。 -Vbeep_heroine.wav;
 changeScene:prologue.axs;
 
-; —— 大厅章节菜单（自由参观：tour=0，各章结束回到本菜单）——
-label:chapter_menu;
-setVar:tour=0 -global;
-Sion:自由参观模式——从这里直接选任意章节。 -Vbeep_heroine.wav;
-choose:序章 · 深夜来电:ch_prologue|舞台演出席:ch_stage|音频演播室 · 分轨混音台:ch_audio|Live2D 角色演出（Inochi2D）:ch_inochi|3D 场景演示:ch_3d|LUA 贪吃蛇小游戏:ch_snake|逻辑与控制流:ch_logic|线性巡礼（Sion 全程导游）:begin_tour|结束演示:quit;
-
+; —— 章节跳转（章节结束自动回到大厅主菜单）——
 label:ch_prologue;
 changeScene:prologue.axs;
 label:ch_stage;

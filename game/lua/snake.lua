@@ -192,7 +192,7 @@ local function draw()
   elseif headless_ai then
     axolotl.gui.text("无头自推演：固定种子 + 贪心 AI（CI 确定性验收）。")
   else
-    axolotl.gui.text("方向键 / WASD 移动；R 重开棋盘；失败即退出。")
+    axolotl.gui.text("虚拟键盘 / 方向键 / WASD 移动；R 重开棋盘；失败即退出。")
   end
 end
 
@@ -202,9 +202,12 @@ axolotl.on("frame", function(dt)
     axolotl.scene.exit("over")
     return
   end
-  -- 输入：方向 / WASD / R（重开）。
+  -- 输入：统一走 vpad 总线（触屏虚拟键盘边沿 + 键盘透传）。
   local steps = axolotl.input.poll()
   for _, key in ipairs(steps) do
+    vpad.press(key)
+  end
+  for _, key in ipairs(vpad.poll()) do
     if key == "up" or key == "w" then set_dir(0, -1)
     elseif key == "down" or key == "s" then set_dir(0, 1)
     elseif key == "left" or key == "a" then set_dir(-1, 0)
@@ -219,11 +222,18 @@ axolotl.on("frame", function(dt)
     step()
   end
   draw()
+  if not headless_ai then
+    vpad.draw()
+  end
   -- 结果桥：变量由 LUA 完全维护，剧本直接读取分支。
   axolotl.var.set("snake_state", state, "normal")
   axolotl.var.set("snake_score", score, "normal")
 end)
 
 new_board()
+if not headless_ai then
+  -- 触屏设备默认十字键 + AB 布局（脚本作者可改 enable("stick")）。
+  vpad.enable("dpad")
+end
 axolotl.log(string.format(
   "snake scene ready: %dx%d cell=%d headless=%s", W, H, cell, tostring(headless_ai)))
