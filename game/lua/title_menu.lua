@@ -15,10 +15,18 @@ if not axolotl.engine.scene_active() then
   return -- boot 层不注册（与 snake.lua 同一守卫惯例）
 end
 
--- 无头自推演：确定性第一项（线性巡礼）。
+-- 无头自推演：确定性第一项（线性巡礼）；若剧本预置了
+-- `menu_autochoice`（如 `setVar:menu_autochoice=ch_snake -global;`）则改选该项，
+-- 供分支链的非首项路径做无头回归覆盖。
 if axolotl.engine.headless() then
-  axolotl.log("title_menu: headless auto-select begin_tour")
-  axolotl.scene.exit("begin_tour")
+  local forced = axolotl.var.get("menu_autochoice")
+  if forced and #forced > 0 then
+    axolotl.log(string.format("title_menu: headless auto-select %s (forced)", forced))
+    axolotl.scene.exit(forced)
+  else
+    axolotl.log("title_menu: headless auto-select begin_tour")
+    axolotl.scene.exit("begin_tour")
+  end
   return
 end
 

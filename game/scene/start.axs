@@ -39,15 +39,15 @@ voiceBlips:none;
 ; 触控点击 / 无头自推演均把结果写进 menu_choice，随后按值跳转。
 label:chapter_menu;
 runLua:title_menu.lua -result=menu_choice;
-if:menu_choice==begin_tour|jumpLabel:begin_tour;
-if:menu_choice==ch_prologue|jumpLabel:ch_prologue;
-if:menu_choice==ch_stage|jumpLabel:ch_stage;
-if:menu_choice==ch_audio|jumpLabel:ch_audio;
-if:menu_choice==ch_inochi|jumpLabel:ch_inochi;
-if:menu_choice==ch_3d|jumpLabel:ch_3d;
-if:menu_choice==ch_snake|jumpLabel:ch_snake;
-if:menu_choice==ch_logic|jumpLabel:ch_logic;
-if:menu_choice==quit|jumpLabel:quit;
+if:menu_choice=="begin_tour"|jumpLabel:begin_tour;
+if:menu_choice=="ch_prologue"|jumpLabel:ch_prologue;
+if:menu_choice=="ch_stage"|jumpLabel:ch_stage;
+if:menu_choice=="ch_audio"|jumpLabel:ch_audio;
+if:menu_choice=="ch_inochi"|jumpLabel:ch_inochi;
+if:menu_choice=="ch_3d"|jumpLabel:ch_3d;
+if:menu_choice=="ch_snake"|jumpLabel:ch_snake;
+if:menu_choice=="ch_logic"|jumpLabel:ch_logic;
+if:menu_choice=="quit"|jumpLabel:quit;
 choose:线性巡礼（Sion 全程导游）:begin_tour|结束演示:quit;
 
 label:begin_tour;

@@ -28,7 +28,7 @@ voiceBlips:none;
 runLua:snake.lua -result=snake_result;
 
 ; —— 场景返回：脚本声明的结果（snake_result）与它写回的剧本变量 ——
-if:snake_state==over|jumpLabel:confirmed_over;
+if:snake_state=="over"|jumpLabel:confirmed_over;
 Sion:咦，不是正常失败退出的？……不管怎样，场景已经回来了。 -Vbeep_heroine.wav;
 jumpLabel:after_score;
 label:confirmed_over;
