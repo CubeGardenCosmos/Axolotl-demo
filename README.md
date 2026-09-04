@@ -43,6 +43,9 @@ AXL_HEADLESS=1 cargo run -p axolotl-app -- --game-dir /path/to/Axolotl-demo
 
 # 窗口化演示（Windows/MSVC 或带 X11 的 Linux）
 cargo run -p axolotl-app --features windowed -- --game-dir /path/to/Axolotl-demo
+
+# 规格化媒体打包（优化体积，WAV/MP3 转 OGG，节省约 150MB+）
+axolotlc pack game -o assets.pak --media-normalize
 ```
 
 启动时引擎会对 `game/scene/` 做一次 `parse → lower → emit` 并写出 `scenes.axb`
